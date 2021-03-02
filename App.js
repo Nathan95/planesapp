@@ -20,7 +20,6 @@ export default class App extends React.Component {
     return (
       <Card title="All Done!">
         <Text style={{ marginBottom: 10 }}>There is no more content here!</Text>
-        <Button backgroundColor="#03A9FA" title="Get more!" />
       </Card>
     );
   }
@@ -42,14 +41,15 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   image: {
     width: '100%',
-    height: 500,
+    height: 400,
     borderRadius: 4,
     marginBottom: 10,
   },
   logoImage: {
     width: 250,
     height: 50,
-    marginTop: 50,
+    marginTop: 70,
+    marginBottom: 30,
     marginLeft:'auto',
     marginRight: 'auto',
   },

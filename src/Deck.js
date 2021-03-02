@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { TouchableOpacity, Animated, View, PanResponder, Dimensions, Text } from "react-native";
+import { 
+  TouchableOpacity, 
+  Animated, 
+  View, 
+  PanResponder, 
+  Dimensions, 
+  Text, 
+} from "react-native";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 const SWIPE_THRESHOLD = 0.25 * SCREEN_WIDTH;
@@ -40,7 +47,8 @@ class Deck extends Component {
     const x = direction === "right" ? SCREEN_WIDTH : -SCREEN_WIDTH;
     Animated.timing(this.state.position, {
       toValue: { x, y: 0 },
-      duration: SWIPE_OUT_DURATION
+      duration: SWIPE_OUT_DURATION,
+      useNativeDriver: false 
     }).start(() => this.onSwipeComplete(direction));
   }
 
@@ -56,7 +64,8 @@ class Deck extends Component {
   //makes the card bounce back to position
   resetPosition() {
     Animated.spring(this.state.position, {
-      toValue: { x: 0, y: 0 }
+      toValue: { x: 0, y: 0 },
+      useNativeDriver: false 
     }).start();
   }
 
@@ -88,9 +97,8 @@ class Deck extends Component {
       if (i === this.state.index) {
         return (
           <Animated.View
-          useNativeDriver={true}
             key={item.id}
-            style={[this.getCardStyle(), styles.cardStyle, {zIndex: 99}]}
+            style={[this.getCardStyle(), styles.cardStyle, {zIndex: 99, top: 10 * (i - this.state.index) }]}
             {...this.state.panResponder.panHandlers}
           >
             {this.props.renderCard(item)}
@@ -124,7 +132,7 @@ const styles = {
     borderRadius: 100,
     position: "absolute",
     width: SCREEN_WIDTH,
-    top: 10
+    top: 20
   },
   crossButton: {
     marginLeft: 20,
