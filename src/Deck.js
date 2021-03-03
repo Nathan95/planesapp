@@ -111,10 +111,10 @@ class Deck extends Component {
           {this.props.renderCard(item)}
           <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.crossButton} onPress={()=> this.forceSwipe("left")}>
-            <Text style={styles.buttonText}>x</Text>
+            <Text style={styles.crossButtonText}>x</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.tickButton} onPress={()=> this.forceSwipe("right")}>
-          <Text style={styles.buttonText}>✓</Text>
+          <Text style={styles.tickButtonText}>✓</Text>
           </TouchableOpacity>
           </View>
         </View>
@@ -138,23 +138,33 @@ const styles = {
     marginLeft: 20,
     marginTop: 20,
     borderRadius: 100,
-    width:50,
-    height:50,
-    backgroundColor: 'red',
-    fontSize: 50,
+    width:70,
+    height:70,
+    borderColor: 'red',
+    borderStyle: 'solid',
+    borderWidth: 2,
   },
   tickButton: {
     marginTop: 20,
     marginRight: 20,
     borderRadius: 100,
-    width:50,
-    height:50,
-    backgroundColor: 'green',
-    fontSize: 50,
+    width:70,
+    height:70,
+    borderColor: 'green',
+    borderStyle: 'solid',
+    borderWidth: 2,
   },
-  buttonText: {
+  crossButtonText: {
     textAlign: 'center',
-    marginTop: 15
+    marginTop:6,
+    color: 'red',
+    fontSize: 30
+  },
+  tickButtonText: {
+    textAlign: 'center',
+    marginTop:8,
+    color: 'green',
+    fontSize: 30
   },
   buttonContainer: {
     flex: 1,

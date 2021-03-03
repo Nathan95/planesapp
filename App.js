@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, Image} from "react-native";
-import { Card, Button } from "react-native-elements";
+import { Card } from "react-native-elements";
 import Deck from "./src/Deck";
 import { data } from './data';
 

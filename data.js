@@ -13,7 +13,7 @@ export const data = [
   },
   {
     id: 3,
-    text: "Slick James",
+    text: "James",
     uri: "https://i.imgur.com/in5VTbq.jpg",
     desc: "Producer"
   },
